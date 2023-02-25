@@ -1,6 +1,6 @@
 # hosting
 
-Привет! Это проект хостинга New Co http://magazine.hhos.ru, созданный мной в 2021 году с 0 на HTML+CSS+JS+PHP.
+Привет! Это проект хостинга New Co http://magazine.hhos.ru, созданный мной в 2022 году с 0 на HTML+CSS+JS+PHP+MySQL.
 
 ### Содержание
 * Ссылка на сайт
@@ -10,7 +10,7 @@
 
 **Ссылка на сайт**
 
-* [Это ссылка на мой сайт в GitHub Pages](https://numarta.github.io/)
+* [Это ссылка на мой сайт в GitHub Pages](https://numarta.github.io/hosting/)
 
 **Описание**
 
@@ -26,5 +26,5 @@
 Все проверено на ошибки.
 
 Мой сайт:
-https://numarta.github.io/
+https://numarta.github.io/hosting/
 http://magazine.hhos.ru
