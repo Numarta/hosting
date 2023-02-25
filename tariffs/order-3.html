@@ -1,0 +1,774 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+                                
+        <title>New Co — NVMe-хостинг для сайтов, техническая поддержка 24/7</title>
+
+
+
+        <link rel="icon" type="image/x-icon" href="img/logo.png" sizes="48x48">
+        <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" sizes="48x48">
+
+    
+<link href="assets\20f9de9\css\bootstrap.css" rel="stylesheet">
+<link href="lib\font-awesome\css\font-awesome.min.css" rel="stylesheet">
+<link href="bootstrap4\css\bootstrap-grid.min.css" rel="stylesheet">
+<link href="lib\switchery\dist\switchery.min.css" rel="stylesheet">
+<link href="lib\iCheck\skins\square\purple.css" rel="stylesheet">
+<link href="main.min.css?1579708958" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body class="    body-page
+">
+
+
+<header>
+    <div class="header-container__top">
+        <div class="container pos-r">
+            <nav>
+                <ul class="header-top-nav">
+                    
+
+                    <li><a class="top-nav-item item-pay" title="Оплата" href="pay.html"><span>Оплата</span></a></li>
+                    
+                </ul>
+
+                <div class="header-bottom__logo">
+                    <a class="header-logo" href="index.htm">
+                        <img src="img/logotop.png"  width="80">
+                    </a>
+                </div>
+
+                <ul class="header-bottom-nav">
+                                                                    <li><a href="tariffs.html">Виртуальный хостинг</a></li>
+                                                                   
+                                                                    <li><a href="tariffs\dedicated.html">Выделенные серверы</a></li>
+                                    </ul>
+
+                <div class="header-bottom__bar">
+                    <button type="button" onclick="BarMenu.toggle('.header-container__menu', 'opened')"><i class="fa fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="header-container__menu">
+        <ul>
+            <li><a href="index.htm">Главная</a></li>
+                                            <li><a href="tariffs.html">Виртуальный хостинг</a></li>
+                                            <li><a href="tariffs\dedicated.html">Выделенные серверы</a></li>
+            <li><a class="top-nav-item item-pay" title="Оплата" href="pay.html"><span>Оплата</span></a></li>
+            
+            <li>
+                <a class="top-nav-item support-tel" href="tel:" target="_blank">
+                    8-800-555-35-35<small>Поддержка 24/7</small>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="header-container">
+
+        <div class="container pos-r">
+            <div class="header-container__bottom">
+
+                <div class="header-bottom__logo">
+                    <a class="header-logo" href="index.htm">
+                        <img src="img\logo.png"  width="190">
+                    </a>
+                </div>
+
+                <div class="header-bottom__menu">
+                    <nav>
+                        <ul class="header-bottom-nav">
+                                                                                            <li><a href="tariffs.html">Виртуальный хостинг</a></li>
+                                                                                            <li><a href="tariffs\dedicated.html">Выделенные серверы</a></li>
+                                                    </ul>
+                    </nav>
+                </div>
+
+                <div class="header-bottom__support">
+                    <a class="support-channel" href="" target="_blank"></a>
+                    <a class="support-tel" href="" target="_blank">
+                        8-800-555-35-35<small>Поддержка 24/7</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+       
+
+           <br>
+                            <br>
+                            <br>
+                            <br><br>
+                            <br>
+                            <br>
+                            <br>                 
+        <div class="header-about"><strong>Хостинг на NVMe</strong> <br>для нетерпеливых</div>
+
+                   
+</header>    <div class="layout">
+        <main>    
+    <div class="bg-container">
+        <div class="pos-r">
+                    
+            
+    
+        
+    
+    
+    <div class="container-inside p-t-100">
+        <div class="page-order-container">
+            <h1 class="page-title text-center">Оформление заказа по тарифу «Турбо Битрикс 3»</h1>
+
+            <div class="order-inside">
+                <div id="page-order-sent" class="sent-msg top-space-lg hidden">
+                    Ваш заказ № <strong id="order-msg-id"></strong> успешно оформлен<br>и будет обработан нашими менеджерами в ближайшее время.<br><br>
+                    На ваш электронный ящик <strong id="order-msg-email" class="color-blue"></strong> отправлено письмо с деталями заказа.
+                </div>
+
+                
+                <form id="w0" class="form-horizontal order-page-form top-space-lg" action="/ajax/order.html" method="post" onsubmit="OrderPage.submit(this); return false;">
+                <input type="hidden" id="order_service_id" name="OrderForm[serviceId]">
+                <input type="hidden" id="orderform-package" name="OrderForm[package]" value="turbobitrix3">
+                <input type="hidden" id="orderform-event" name="OrderForm[event]" value="0">
+
+                <div class="page-order-switcher m-t-100 ">
+                    <input type="hidden" id="order_reg_type" name="OrderForm[domainRegType]" value="reg">
+
+                                                                                                    <button type="button" data-type="reg" class="btn btn-blue btn-switch active" onclick="OrderPage.switchRegType(this, 'reg')">С регистрацией домена</button>
+                                                                                                                            <button type="button" data-type="mov" class="btn btn-blue btn-switch " onclick="OrderPage.switchRegType(this, 'mov')">Без регистрации домена</button>
+                                                                                                                            <button type="button" data-type="transfer" class="btn btn-blue btn-switch " onclick="OrderPage.switchRegType(this, 'transfer')">Перенести сайт с другого хостинга</button>
+                                                            </div>
+
+                <div class="m-t-100">
+                                        <div class="form-group field-order_cust_type required">
+<label class="control-label col-xs-12 col-sm-4" for="order_cust_type">Вы представляете</label><div class="col-xs-12 col-sm-5"><select id="order_cust_type" class="form-control" name="OrderForm[customerType]" onchange="OrderPage.changeCustType(this)" aria-required="true">
+<option value="f" selected="">Физическое лицо</option>
+<option value="u">Организацию</option>
+<option value="i">ИП</option>
+</select><div class="help-block"></div></div>
+</div>
+                </div>
+
+                                                <div class="form-group field-orderform-domainname required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-domainname">Домен</label><div class="col-xs-10 col-sm-5"><input type="text" id="orderform-domainname" class="form-control" name="OrderForm[domainName]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-sm-1 field-help text-left">                    <button class="btn btn-help" type="button" data-text="Укажите желаемое доменное имя. Если вы планируете размещать несколько доменов,
+                                то укажите в этом поле один из них, остальные домены вы сможете добавить после создания аккаунта"></button>
+                </div>
+</div>
+
+                                                <div class="form-group field-orderform-customerlogin">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-customerlogin">Желаемый логин в системе</label><div class="col-xs-10 col-sm-5"><input type="text" id="orderform-customerlogin" class="form-control" name="OrderForm[customerLogin]" maxlength="10"><div class="help-block"></div></div><div class="col-xs-2 col-sm-1 field-help text-left">                    <button class="btn btn-help" type="button" data-text="От 5 до 10 символов (латинские буквы и цифры). Указывать не обязательно."></button>
+                </div>
+</div>
+
+                                <div class="diff-blocks cust-type-f reg-type-reg reg-type-transfer reg-type-mov">
+                    <div class="form-group field-orderform-personname required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-personname">Фамилия Имя Отчество</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-personname" class="form-control" name="OrderForm[personName]" placeholder="Желтоносов Никита Владимирович" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    <div class="form-group field-orderform-personemail required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-personemail">Электронная почта</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-personemail" class="form-control" name="OrderForm[personEmail]" placeholder="inp.11@mail.ru" aria-required="true"><div class="help-block"></div></div>
+</div>
+                </div>
+
+                                <div class="diff-blocks cust-type-i reg-type-reg reg-type-transfer reg-type-mov hidden">
+
+                    <div class="form-group field-orderform-entname required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-entname">ФИО</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-entname" class="form-control" name="OrderForm[entName]" placeholder="Желтоносов Никита Владимирович" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    <div class="form-group field-orderform-entemail required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-entemail">Электронная почта</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-entemail" class="form-control" name="OrderForm[entEmail]" placeholder="inp.11@mail.ru" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    <div class="form-group field-orderform-entinn required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-entinn">ИНН</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-entinn" class="form-control" name="OrderForm[entInn]" maxlength="12" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    <div class="form-group field-orderform-entbirthday required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-entbirthday">Дата рождения</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-entbirthday" class="form-control" name="OrderForm[entBirthDay]" data-plugin-inputmask="inputmask_d60cdaa9"><div class="help-block"></div></div>
+</div>
+                    <div class="form-group field-orderform-entphone required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-entphone">Телефон</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-entphone" class="form-control" name="OrderForm[entPhone]" data-plugin-inputmask="inputmask_ccece91f"><div class="help-block"></div></div>
+</div>
+
+                    <div class="container-text row">
+                        <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+                            <div class="m-t-40 order-separator"></div>
+
+                            <h4 class="font-size-title text-center m-t-40">Паспортные данные</h4>
+                            <p class="order-info">
+                                <small>Запрашиваемые данные защищены в соответствии с ФЗ 152 «О персональных данных»</small>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-entpassportnumber required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-entpassportnumber">Серия и номер</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-entpassportnumber" class="form-control" name="OrderForm[entPassportNumber]" placeholder="65 12 632592" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-entpassportdate required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-entpassportdate">Дата выдачи</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-entpassportdate" class="form-control" name="OrderForm[entPassportDate]" data-plugin-inputmask="inputmask_d60cdaa9"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-entpassportmade required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-entpassportmade">Выдан</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-entpassportmade" class="form-control" name="OrderForm[entPassportMade]" placeholder="Отделом УФМС." aria-required="true"><div class="help-block"></div></div>
+</div>
+                    </div>
+
+                    <div class="container-text row">
+                        <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+                            <div class="m-t-40 order-separator"></div>
+                            <h4 class="font-size-title text-center m-t-40">Банковские реквизиты</h4>
+                        </div>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-entbankname required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-entbankname">Наименование банка</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-entbankname" class="form-control" name="OrderForm[entBankName]" placeholder="ОАО «Сбербанк» г. Москва" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-entbankbik required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-entbankbik">БИК</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-entbankbik" class="form-control" name="OrderForm[entBankBik]" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-entbankaccountkor required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-entbankaccountkor">Корреспондентский счет</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-entbankaccountkor" class="form-control" name="OrderForm[entBankAccountKor]" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-entbankaccountras required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-entbankaccountras">Расчетный счет</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-entbankaccountras" class="form-control" name="OrderForm[entBankAccountRas]" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    </div>
+
+
+                    <div class="container-text row">
+                        <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+                            <div class="m-t-40 order-separator"></div>
+                            <h4 class="font-size-title text-center m-t-40">Контактная информация</h4>
+                        </div>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-entcontactindex required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-entcontactindex">Индекс</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-entcontactindex" class="form-control" name="OrderForm[entContactIndex]" placeholder="620078" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-entcontactcity required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-entcontactcity">Город</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-entcontactcity" class="form-control" name="OrderForm[entContactCity]" placeholder="Екатеринбург" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-entcontactaddress required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-entcontactaddress">Адрес</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-entcontactaddress" class="form-control" name="OrderForm[entContactAddress]" placeholder="Коминтерна 13, кв 29." aria-required="true"><div class="help-block"></div></div>
+</div>
+                    </div>
+
+                    <div class="container-text row">
+                        <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+                            <div class="m-t-40 order-separator"></div>
+                            <h4 class="font-size-title text-center m-t-40">Почтовый адрес</h4>
+                        </div>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-entcontactpostindex required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-entcontactpostindex">Индекс</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-entcontactpostindex" class="form-control" name="OrderForm[entContactPostIndex]" placeholder="620078" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-entcontactpostcity required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-entcontactpostcity">Город</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-entcontactpostcity" class="form-control" name="OrderForm[entContactPostCity]" placeholder="Екатеринбург" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-entcontactpostaddress required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-entcontactpostaddress">Адрес</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-entcontactpostaddress" class="form-control" name="OrderForm[entContactPostAddress]" placeholder="Коминтерна д.13, кв.29" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-entcontactpostreceiver required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-entcontactpostreceiver">Получатель</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-entcontactpostreceiver" class="form-control" name="OrderForm[entContactPostReceiver]" placeholder="Желтоносову Н. В." aria-required="true"><div class="help-block"></div></div>
+</div>
+                    </div>
+
+                    <div class="container-text row">
+                        <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+                            <div class="m-t-40 order-separator"></div>
+                            <h4 class="font-size-title text-center m-t-40">Контактная персона</h4>
+                        </div>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-entcontactname required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-entcontactname">ФИО</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-entcontactname" class="form-control" name="OrderForm[entContactName]" placeholder="Желтоносов Никита Владимирович" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-entcontactphone required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-entcontactphone">Телефон</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-entcontactphone" class="form-control" name="OrderForm[entContactPhone]" data-plugin-inputmask="inputmask_ccece91f"><div class="help-block"></div></div>
+</div>
+                    </div>
+                </div>
+                
+                                <div class="diff-blocks cust-type-u reg-type-reg reg-type-mov reg-type-transfer hidden">
+
+                    <div class="form-group field-orderform-orgname required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgname">Наименование организации</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgname" class="form-control" name="OrderForm[orgName]" placeholder="ООО «Лестех»" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    <div class="form-group field-orderform-orgemail required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgemail">Электронная почта</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgemail" class="form-control" name="OrderForm[orgEmail]" placeholder="inp.11@mail.ru" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    <div class="form-group field-orderform-orginn required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-orginn">ИНН</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-orginn" class="form-control" name="OrderForm[orgInn]" maxlength="12" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    <div class="form-group field-orderform-orgkpp required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-orgkpp">КПП</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-orgkpp" class="form-control" name="OrderForm[orgKpp]" maxlength="9" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    <div class="form-group field-orderform-orgphone required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-orgphone">Телефон</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-orgphone" class="form-control" name="OrderForm[orgPhone]" data-plugin-inputmask="inputmask_ccece91f"><div class="help-block"></div></div>
+</div>
+
+                    <div class="container-text row">
+                        <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+                            <div class="m-t-40 order-separator"></div>
+                            <h4 class="font-size-title text-center m-t-40">Банковские реквизиты</h4>
+                        </div>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-orgbankname required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgbankname">Наименование банка</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgbankname" class="form-control" name="OrderForm[orgBankName]" placeholder="ОАО «Сити Банк» г. Москва" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgbankbik required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-orgbankbik">БИК</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-orgbankbik" class="form-control" name="OrderForm[orgBankBik]" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    </div>
+                    <div class="m-t-20">
+                                                <div class="form-group field-org_is_budget required">
+<div class="col-xs-12 col-sm-offset-4 col-sm-8"><input type="hidden" name="OrderForm[orgIsBudget]" value="0"><label class="strong color-violet"><input type="checkbox" id="org_is_budget" class="i-fields" name="OrderForm[orgIsBudget]" value="1"> Бюджетная организация</label></div>
+</div>
+                    </div>
+                    <div class="m-t-20 org-account-container">
+                        <div class="form-group field-orderform-orgaccountkor">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-orgaccountkor">Корреспондентский счет</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-orgaccountkor" class="form-control" name="OrderForm[orgAccountKor]"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgaccountras">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-orgaccountras">Расчетный счет</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-orgaccountras" class="form-control" name="OrderForm[orgAccountRas]"><div class="help-block"></div></div>
+</div>
+                    </div>
+
+                    <div class="container-text row">
+                        <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+                            <div class="m-t-40 order-separator"></div>
+                            <h4 class="font-size-title text-center m-t-40">Контактная информация</h4>
+                            <p class="order-info">Необходима для заключения договора и отправки отчетных документов</p>
+                        </div>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-orgbossname required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgbossname">Руководитель</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgbossname" class="form-control" name="OrderForm[orgBossName]" placeholder="Желтоносов Никита Владимирович" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgbossposition required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgbossposition">Должность руководителя</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgbossposition" class="form-control" name="OrderForm[orgBossPosition]" placeholder="генеральный директор" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgbossdocs required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgbossdocs">Действует на основании</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgbossdocs" class="form-control" name="OrderForm[orgBossDocs]" placeholder="Устава" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    </div>
+
+                    <div class="container-text row">
+                        <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+                            <div class="m-t-40 order-separator"></div>
+                            <h4 class="font-size-title text-center m-t-40">Юридический адрес</h4>
+                        </div>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-orgindex required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-orgindex">Индекс</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-orgindex" class="form-control" name="OrderForm[orgIndex]" placeholder="620078" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgcity required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgcity">Город</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgcity" class="form-control" name="OrderForm[orgCity]" placeholder="Екатеринбург" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgaddress required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgaddress">Адрес</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgaddress" class="form-control" name="OrderForm[orgAddress]" placeholder="Коминтерна д.13, кв.29" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    </div>
+
+                    <div class="container-text row">
+                        <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+                            <div class="m-t-40 order-separator"></div>
+                            <h4 class="font-size-title text-center m-t-40">Почтовый адрес</h4>
+                        </div>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-orgpostindex required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-orgpostindex">Индекс</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-orgpostindex" class="form-control" name="OrderForm[orgPostIndex]" placeholder="620078" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgpostcity required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgpostcity">Город</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgpostcity" class="form-control" name="OrderForm[orgPostCity]" placeholder="Екатеринбург" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgpostaddress required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgpostaddress">Адрес</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgpostaddress" class="form-control" name="OrderForm[orgPostAddress]" placeholder="Коминтерна д.13" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgpostreceiver required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgpostreceiver">Получатель</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgpostreceiver" class="form-control" name="OrderForm[orgPostReceiver]" placeholder="ИЦЭ-41, Кащеев Д." aria-required="true"><div class="help-block"></div></div>
+</div>
+                    </div>
+
+                    <div class="container-text row">
+                        <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+                            <div class="m-t-40 order-separator"></div>
+                            <h4 class="font-size-title text-center m-t-40">Контактная персона</h4>
+                        </div>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-orgcontactname required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgcontactname">ФИО</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgcontactname" class="form-control" name="OrderForm[orgContactName]" placeholder="Желтоносов Никита Владимирович" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgcontactphone required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgcontactphone">Телефон</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgcontactphone" class="form-control" name="OrderForm[orgContactPhone]" data-plugin-inputmask="inputmask_ccece91f"><div class="help-block"></div></div>
+</div>
+                    </div>
+                </div>
+                
+                                <div class="diff-blocks cust-type-f reg-type-reg top-space-lg">
+
+                    <div class="m-t-60 order-separator"></div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                            <h2 class="text-center  m-t-60">Данные для регистрации домена</h2>
+                            <p class="order-info m-t-20">
+                                Это обязательное требование регистратора. Запрашиваемые данные защищены в соответствии с ФЗ 152 «О персональных данных».
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-domaindataphone required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-domaindataphone">Телефон</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-domaindataphone" class="form-control" name="OrderForm[domainDataPhone]" data-plugin-inputmask="inputmask_ccece91f"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-domaindatabirthday required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-domaindatabirthday">Дата рождения</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-domaindatabirthday" class="form-control" name="OrderForm[domainDataBirthDay]" data-plugin-inputmask="inputmask_d60cdaa9"><div class="help-block"></div></div>
+</div>
+
+                        <div class="container-text row">
+                            <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+                                <div class="m-t-40 order-separator"></div>
+                                <h4 class="font-size-title text-center m-t-40">Данные паспорта владельца домена</h4>
+                            </div>
+                        </div>
+                        <div class="m-t-40">
+                            <div class="form-group field-orderform-domaindatapassportnumber required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-domaindatapassportnumber">Серия и номер</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-domaindatapassportnumber" class="form-control" name="OrderForm[domainDataPassportNumber]" placeholder="40 03 459912" aria-required="true"><div class="help-block"></div></div>
+</div>
+                            <div class="form-group field-orderform-domaindatapassportdate required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-domaindatapassportdate">Дата выдачи</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-domaindatapassportdate" class="form-control" name="OrderForm[domainDataPassportDate]" data-plugin-inputmask="inputmask_d60cdaa9"><div class="help-block"></div></div>
+</div>
+
+                                                        <div class="form-group field-orderform-domaindatapassportmade required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-domaindatapassportmade">Кем выдан</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-domaindatapassportmade" class="form-control" name="OrderForm[domainDataPassportMade]" placeholder="Отделом УФМС" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        </div>
+
+
+                        <div class="container-text row">
+                            <div class="col-xs-12 col-sm-offset-2 col-sm-8">
+                                <div class="m-t-40 order-separator"></div>
+                                <h4 class="font-size-title text-center m-t-40">Адрес</h4>
+                            </div>
+                        </div>
+                        <div class="m-t-40">
+                            <div class="form-group field-orderform-domaindataindex required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-domaindataindex">Индекс</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-domaindataindex" class="form-control" name="OrderForm[domainDataIndex]" maxlength="8" placeholder="620078" aria-required="true"><div class="help-block"></div></div>
+</div>
+                            <div class="form-group field-orderform-domaindatacity required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-domaindatacity">Город</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-domaindatacity" class="form-control" name="OrderForm[domainDataCity]" placeholder="Екатеринбург" aria-required="true"><div class="help-block"></div></div>
+</div>
+                            <div class="form-group field-orderform-domaindataaddress required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-domaindataaddress">Адрес</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-domaindataaddress" class="form-control" name="OrderForm[domainDataAddress]" placeholder="Коминтрена 13" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        </div>
+                    </div>
+                </div>
+                
+                                <div class="diff-blocks cust-type-f cust-type-i cust-type-u reg-type-transfer top-space-lg hidden">
+
+                    <div class="m-t-60 order-separator"></div>
+
+                    <div class="row">
+                        <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                            <h2 class="text-center m-t-60">Данные для переноса</h2>
+                            <p class="order-info m-t-20">
+                                Это обязательное требование регистратора. Запрашиваемые данные защищены в соответствии с ФЗ 152 «О персональных данных».
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="m-t-40">
+                                                <div class="form-group field-orderform-sitemovefrom required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-sitemovefrom">Откуда перенести</label><div class="col-xs-12 col-sm-5"><select id="orderform-sitemovefrom" class="form-control" name="OrderForm[siteMoveFrom]" aria-required="true">
+<option value="timeweb">Timeweb</option>
+<option value="beget">Beget</option>
+<option value="regru">REG.RU</option>
+<option value="rucenter">RU-CENTER (nic.ru)</option>
+<option value="jino">Jino</option>
+<option value="masterhost">Masterhost</option>
+<option value="other">Другой или я не знаю</option>
+</select><div class="help-block"></div></div>
+</div>
+                    </div>
+
+                                                            <div class="form-group field-orderform-sitemovelist">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-sitemovelist">Список сайтов</label><div class="col-xs-10 col-sm-5"><textarea id="orderform-sitemovelist" class="form-control" name="OrderForm[siteMoveList]"></textarea><div class="help-block"></div></div><div class="col-xs-2 col-sm-1 field-help text-left">                        <button class="btn btn-help" type="button" data-text="Укажите через запятую те сайты, которые нужно перенести"></button>
+                    </div>
+</div>
+
+                    <div class="container-text row">
+                        <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                            <div class="m-t-40 order-separator"></div>
+                            <h4 class="font-size-title text-center m-t-40">Доступ к текущему хостингу</h4>
+                            <p class="order-info">Чтобы мы смогли перенести сайты с вашего текущего хостинга,
+                                нам необходимы реквизиты доступа в панель управления</p>
+                        </div>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-sitemovelogin required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-sitemovelogin">Логин</label><div class="col-xs-10 col-sm-5"><input type="text" id="orderform-sitemovelogin" class="form-control" name="OrderForm[siteMoveLogin]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-sm-1 field-help text-left">                        <button class="btn btn-help" type="button" data-text="Укажите через запятую те сайты, которые нужно перенести"></button>
+                    </div>
+</div>
+                        <div class="form-group field-orderform-sitemovepassword required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-sitemovepassword">Пароль</label><div class="col-xs-10 col-sm-5"><input type="password" id="orderform-sitemovepassword" class="form-control" name="OrderForm[siteMovePassword]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-sm-1 field-help text-left">                        <button class="btn btn-help" type="button" data-text="Укажите через запятую те сайты, которые нужно перенести"></button>
+                    </div>
+</div>
+                    </div>
+                </div>
+                
+                                <div class="diff-blocks cust-type-u reg-type-reg reg-type-mov reg-type-transfer hidden">
+
+                    <div class="container-text row">
+                        <div class="col-xs-12 col-sm-offset-3 col-sm-6">
+                            <div class="m-t-40 order-separator"></div>
+                            <h4 class="font-size-title text-center m-t-40">Данные администратора домена</h4>
+                        </div>
+                    </div>
+                    <div class="m-t-40">
+                        <div class="form-group field-orderform-orgadminname required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgadminname">ФИО</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgadminname" class="form-control" name="OrderForm[orgAdminName]" placeholder="Желтоносов Никита Владимирович" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgadminindex required">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-orgadminindex">Индекс</label><div class="col-xs-12 col-sm-3"><input type="text" id="orderform-orgadminindex" class="form-control" name="OrderForm[orgAdminIndex]" placeholder="620078" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgadmincity required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgadmincity">Город</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgadmincity" class="form-control" name="OrderForm[orgAdminCity]" placeholder="Екатеринбург" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgadminaddress required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgadminaddress">Адрес</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgadminaddress" class="form-control" name="OrderForm[orgAdminAddress]" placeholder="Коминтерна д.13 кв, 29" aria-required="true"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgadminphone required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgadminphone">Телефон</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgadminphone" class="form-control" name="OrderForm[orgAdminPhone]" data-plugin-inputmask="inputmask_ccece91f"><div class="help-block"></div></div>
+</div>
+                        <div class="form-group field-orderform-orgadminemail required">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-orgadminemail">Электронная почта</label><div class="col-xs-12 col-sm-5"><input type="text" id="orderform-orgadminemail" class="form-control" name="OrderForm[orgAdminEmail]" placeholder="inp.11@mail.ru" aria-required="true"><div class="help-block"></div></div>
+</div>
+                    </div>
+                </div>
+                
+                                
+                <div class="top-space-lg">
+                    <div class="m-t-60 order-separator"></div>
+
+                                            <h2 class="m-t-60 text-center ">Выберите подходящее предложение</h2>
+                    
+                    <div class="row m-t-60 ">
+                        <div class="col-xs-12 col-md-offset-2 col-md-8">
+                            <ul class="order-services">
+                                                                    <li>
+                                        <a href="" class="order-service-item period-1m" onclick="return OrderPage.setService(this, 718)">
+                                                <span class="order-service-about">
+                                                    <span class="service-title">Тариф "Турбо Битрикс 3"</span>
+                                                    <span class="service-period">
+                                                        1 месяц хостинга&nbsp;</span>
+                                                </span>
+                                                                                                                                    <span class="diff-blocks cust-type-f reg-type-reg reg-type-transfer reg-type-mov hidden">
+                                                <span class="order-service-price" data-default="3280" data-quarters="1">3280<small>руб</small></span>
+                                            </span>
+                                            <span class="diff-blocks cust-type-i cust-type-u reg-type-reg reg-type-transfer reg-type-mov hidden">
+                                                <span class="order-service-price" data-default="3280" data-quarters="1">3280<small>руб</small></span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                                                    <li>
+                                        <a href="" class="order-service-item period-12m" onclick="return OrderPage.setService(this, 721)">
+                                                <span class="order-service-about">
+                                                    <span class="service-title">Тариф "Турбо Битрикс 3"</span>
+                                                    <span class="service-period">
+                                                        1 год хостинга&nbsp;<span class="diff-blocks cust-type-f reg-type-reg reg-type-transfer reg-type-mov hidden"><br>(экономия 4680 руб)</span></span>
+                                                </span>
+                                                                                                                                    <span class="diff-blocks cust-type-f reg-type-reg reg-type-transfer reg-type-mov hidden">
+                                                <span class="order-service-price" data-default="34680" data-quarters="4">34680<small>руб</small></span>
+                                            </span>
+                                            <span class="diff-blocks cust-type-i cust-type-u reg-type-reg reg-type-transfer reg-type-mov hidden">
+                                                <span class="order-service-price" data-default="39360" data-quarters="4">39360<small>руб</small></span>
+                                            </span>
+                                        </a>
+                                    </li>
+                                                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="m-t-60 order-separator"></div>
+
+                    <div class="m-t-60">
+                        <div class="diff-blocks cust-type-u reg-type-reg reg-type-transfer reg-type-mov hidden">
+                                    <div class="order-docs">
+        <div class="order-docs-field">
+            <input type="hidden" name="OrderForm[orgIsPostDocs]" value="0"><label><input type="checkbox" id="orderform-orgispostdocs" class="i-switchery" name="OrderForm[orgIsPostDocs]" value="1" onchange="OrderPage.setDocs(this)" data-fee="250"> </label>
+        </div>
+        <div class="order-docs-label">
+            Хочу получать закрывающие документы по почте<br>
+            <small>Стоимость отправки комплекта документов — <strong>250</strong> рублей/квартал</small>
+        </div>
+    </div>
+
+                        </div>
+                        <div class="diff-blocks cust-type-i reg-type-reg reg-type-transfer reg-type-mov hidden">
+                                    <div class="order-docs">
+        <div class="order-docs-field">
+            <input type="hidden" name="OrderForm[entIsPostDocs]" value="0"><label><input type="checkbox" id="orderform-entispostdocs" class="i-switchery" name="OrderForm[entIsPostDocs]" value="1" onchange="OrderPage.setDocs(this)" data-fee="250"> </label>
+        </div>
+        <div class="order-docs-label">
+            Хочу получать закрывающие документы по почте<br>
+            <small>Стоимость отправки комплекта документов — <strong>250</strong> рублей/квартал</small>
+        </div>
+    </div>
+
+                        </div>
+                        <div class="top-space-sm">
+                            <div class="form-group field-orderform-comment">
+<label class="control-label col-xs-12 col-sm-4" for="orderform-comment">Комментарий к заказу</label><div class="col-xs-12 col-sm-5"><textarea id="orderform-comment" class="form-control" name="OrderForm[comment]"></textarea><div class="help-block"></div></div>
+</div>
+
+                                                                                    <div class="form-group field-orderform-promocode">
+<label class="col-xs-12 col-sm-4 control-label" for="orderform-promocode">Промокод</label><div class="col-xs-10 col-sm-3"><input type="text" id="orderform-promocode" class="form-control" name="OrderForm[promocode]" maxlength="20" placeholder="или код партнера"><div class="help-block"></div></div><div class="col-xs-2 col-sm-1 field-help text-left"><button class="btn btn-help" type="button" data-text="Укажите код, если он у вас есть"></button></div>
+</div>
+                        </div>
+                    </div>
+
+                    <div class="row m-t-60">
+                        <div class="col-xs-12 col-sm-offset-2 col-sm-8 text-center">
+                            <button class="btn btn-extra-wide btn-violet btn-hover-light-blue">Отправить заказ</button>
+                        </div>
+                    </div>
+
+                    <div class="m-t-20 text-center">
+                                                                        <div class="form-group field-orderform-personaldataprocessaccess">
+<div class="col-xs-12 col-sm-offset-2 col-sm-8"><input type="hidden" name="OrderForm[personalDataProcessAccess]" value="0"><label class=""><input type="checkbox" id="orderform-personaldataprocessaccess" class="i-fields" name="OrderForm[personalDataProcessAccess]" value="1"> Я согласен на обработку моих персональных данных</label><div class="help-block"></div></div>
+</div>
+                    </div>
+                    <div class="top-space-sm">
+                       <p class="order-info">Осуществляя заказ услуг, вы соглашаетесь с
+    положениями публичной Оферты на
+    предоставление услуг и с Условиями предоставления услуг.
+    Передавая свои персональные данные на сервер NewCo, вы выражаете безусловное согласие
+    на их последующую обработку и хранение в соответствии с Федеральным законом
+    Российской Федерации №152-ФЗ «О персональных данных».
+</p>                          </div>
+                </div>
+
+                </form>
+
+            </div>
+        </div>
+    </div>
+
+            
+    
+
+        </div>
+        
+    </div>
+</main>
+        
+<footer>
+    <div class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__top">
+                    <div class="footer__logo">
+                        <a href="index.htm"><img src="img\logo.png"></a>
+                                            </div>
+
+                    <div class="footer__menu">
+                        <div class="footer__menu-item visible-sm visible-md visible-lg">
+                            <a href="shop.html" class="footer__title">Магазин</a>
+                            <br>
+                            <br>  
+                            <a href="shop\services.html" class="footer__title">Доп. Услуги</a>
+                            <span class="footer__about">Дополнительные услуги, которые могут пригодиться клиентам нашего
+                                хостинга: CMS, Панели управления, SSL-сертификаты</span>
+                        </div>
+                    </div>
+
+                    <div class="footer__separator"></div>
+
+                    <div class="footer__nav">
+                        <nav>
+                            <ul class="footer__nav-main">
+                                <li><a class="footer__title shop visible-xs" href="shop.html">Магазин</a></li>
+                                <li><a class="footer__title" href="pay.html">Оплата</a></li>
+                            </ul>
+                         
+                        </nav>
+                    </div>
+
+                    <div class="footer__search">
+                        <div class="footer__search-form">
+                            <form action="/search.html" method="get">
+                                <input type="hidden" name="searchid" value="1945773">
+                                <div class="search-block">
+                                    <input type="text" placeholder="Поиск по сайту" name="text" value="">
+                                    <button class="search-btn"></button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="social__container">
+                            <div class="footer__search-support">
+                                <a class="support-tel" href="tel:88005557823" target="_blank">
+                                    8-800-555-78-23<small>Поддержка 24/7</small>
+                                </a>
+                            </div>
+
+                            <div class="footer__socials">
+                                <a class="social-vk" href="https://vk.com/vkdanil" target="_blank"></a>
+                                <a class="social-fb" href="https://fb.com/vkdanil" target="_blank"></a>
+                                <a class="social-tw" href="https://twitter.com/vkdanil" target="_blank"></a>
+                                <a class="social-ut" href="https://youtube.com/user/vkdanil" target="_blank"></a>
+                            </div>
+                        </div>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__menu-item _company">
+                     2020 «New Co»<br>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>  </div>
+        <script src="assets\80e87b76\jquery.js"></script>
+<script src="assets\714c36ec\yii.js"></script>
+<script src="lib\html5shiv\dist\html5shiv.min.js"></script>
+<script src="lib\switchery\dist\switchery.min.js"></script>
+<script src="lib\iCheck\icheck.min.js"></script>
+<script src="lib\bootstrap\dist\js\bootstrap.min.js"></script>
+<script src="main.min.js?1579708958"></script>
+<script src="assets\3b22f50e\jquery.inputmask.bundle.js"></script>
+<script>jQuery(function ($) {
+jQuery("#orderform-entbirthday").inputmask(inputmask_d60cdaa9);
+jQuery("#orderform-entphone").inputmask(inputmask_ccece91f);
+jQuery("#orderform-entpassportdate").inputmask(inputmask_d60cdaa9);
+jQuery("#orderform-entcontactphone").inputmask(inputmask_ccece91f);
+jQuery("#orderform-orgphone").inputmask(inputmask_ccece91f);
+jQuery("#orderform-orgcontactphone").inputmask(inputmask_ccece91f);
+jQuery("#orderform-domaindataphone").inputmask(inputmask_ccece91f);
+jQuery("#orderform-domaindatabirthday").inputmask(inputmask_d60cdaa9);
+jQuery("#orderform-domaindatapassportdate").inputmask(inputmask_d60cdaa9);
+jQuery("#orderform-orgadminphone").inputmask(inputmask_ccece91f);
+
+            setTimeout(function(){
+                Goals.reachGoal(3454258, '');
+            }, 3000);
+        
+});</script>
+   </body>
+</html>

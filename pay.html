@@ -1,0 +1,762 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+                                
+        <title>New Co — NVMe-хостинг для сайтов, техническая поддержка 24/7</title>
+
+
+
+        <link rel="icon" type="image/x-icon" href="img/logo.png" sizes="48x48">
+        <link rel="shortcut icon" type="image/x-icon" href="img/logo.png" sizes="48x48">
+
+    
+<link href="assets\20f9de9\css\bootstrap.css" rel="stylesheet">
+<link href="lib\font-awesome\css\font-awesome.min.css" rel="stylesheet">
+<link href="bootstrap4\css\bootstrap-grid.min.css" rel="stylesheet">
+<link href="lib\switchery\dist\switchery.min.css" rel="stylesheet">
+<link href="lib\iCheck\skins\square\purple.css" rel="stylesheet">
+<link href="main.min.css?1579708958" rel="stylesheet">
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+</head>
+
+<body class="body-page">
+
+<script type="text/javascript" src="https://www.googleadservices.com/pagead/conversion.js"></script>
+<header>
+    <div class="header-container__top">
+        <div class="container pos-r">
+            <nav>
+                <ul class="header-top-nav">
+                    
+
+                    <li><a class="top-nav-item item-pay" title="Оплата" href="pay.html"><span>Оплата</span></a></li>
+                     
+                </ul>
+
+                <div class="header-bottom__logo">
+                    <a class="header-logo" href="#">
+                        <img src="img/logotop.png"  width="80">
+                    </a>
+                </div>
+
+                <ul class="header-bottom-nav">
+                                                                    <li><a href="tariffs.html">Виртуальный хостинг</a></li>
+                                                                   
+                                                                    <li><a href="tariffs\dedicated.html">Выделенные серверы</a></li>
+                                    </ul>
+
+                <div class="header-bottom__bar">
+                    <button type="button" onclick="BarMenu.toggle('.header-container__menu', 'opened')"><i class="fa fa-bars"></i></button>
+                </div>
+            </nav>
+        </div>
+    </div>
+
+    <div class="header-container__menu">
+        <ul>
+            <li><a href="#">Главная</a></li>
+                                            <li><a href="tariffs.html">Виртуальный хостинг</a></li>
+                                            <li><a href="tariffs\dedicated.html">Выделенные серверы</a></li>
+            <li><a class="top-nav-item item-pay" title="Оплата" href="pay.html"><span>Оплата</span></a></li>
+            
+            <li>
+                <a class="top-nav-item support-tel" href="tel:" target="_blank">
+                    8-800-555-35-35<small>Поддержка 24/7</small>
+                </a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="header-container">
+
+        <div class="container pos-r">
+            <div class="header-container__bottom">
+
+                <div class="header-bottom__logo">
+                    <a class="header-logo" href="index.htm">
+                        <img src="img\logo.png"  width="190">
+                    </a>
+                </div>
+
+                <div class="header-bottom__menu">
+                    <nav>
+                        <ul class="header-bottom-nav">
+                                                                                            <li><a href="tariffs.html">Виртуальный хостинг</a></li>
+                                                                                            <li><a href="tariffs\dedicated.html">Выделенные серверы</a></li>
+                                                    </ul>
+                    </nav>
+                </div>
+
+                <div class="header-bottom__support">
+                    <a class="support-channel" href="" target="_blank"></a>
+                    <a class="support-tel" href="" target="_blank">
+                        8-800-555-35-35<small>Поддержка 24/7</small>
+                    </a>
+                </div>
+            </div>
+        </div>                                  
+</header>    <div class="layout">
+        <main>    
+    <div class="bg-container">
+        <div class="pos-r">
+                <div class="container-inside p-t-60 p-b-40">
+        <h1 class="page-title text-center">Оплата услуг, пополнение счета</h1>
+
+        <div class="m-t-40 new-payments-info__container">
+            <div class="new-payments-info__logos__container">
+                <img class="new-payments-info__logo" src="img\payment\logos\white-bg\aple-pay.svg" alt="">
+                <img class="new-payments-info__logo" src="img\payment\logos\white-bg\google-pay.svg" alt="">
+                <img class="new-payments-info__logo" src="img\payment\logos\white-bg\samsung-pay.svg" alt="">
+            </div>
+            <div class="new-payments-info__description">
+                Теперь мы принимаем платежи через Apple Pay, Google Pay и Samsung Pay.
+                Выберите «Банковские карты» и перейдите к нужному способу оплаты
+                на странице подтверждения платежа.
+            </div>
+        </div>
+
+        <div class="m-t-60">
+                                            
+
+<div class="payment-container">
+
+    <div class="payment-list__container">
+
+        <div class="payment-list">
+            <a href="#sberbank_card" class="payment-item payment-sberbank_card active" onclick="Payment.showForm(this, Payment.TYPE_SB_CARD)">
+                <span class="payment-name">Банковские карты</span>
+            </a>
+
+            <a href="#yandexmoney/PC" class="payment-item payment-ym-pc" onclick="Payment.showForm(this, Payment.TYPE_YM, Payment.YM_PC)">
+                <span class="payment-name">Яндекс.Деньги</span>
+            </a>
+
+            <a href="" class="payment-item payment-qiwi" onclick="return Payment.submitForm(Payment.TYPE_QIWI)">
+                <span class="payment-name">QIWI Кошелек</span>
+            </a>
+
+            <a href="#bnku" class="payment-item payment-bnku payment-bnki" onclick="Payment.showForm(this, Payment.TYPE_BNKU)">
+                <span class="payment-name">Безналичный расчет</span>
+            </a>
+        </div>
+    </div>
+    <div class="payment-form-container">
+        <div class="page-text m-t-0">
+            <div class="pay-data-form">
+<form id="prepare-yandexmoney" class="form-horizontal form-process" action="/ajax/payment-process.html" method="post" target="_blank">
+    <input type="hidden" id="paymentform-operator" name="PaymentForm[operator]" value="yandexmoney">
+    <input type="hidden" id="paymentform-suboperator" name="PaymentForm[subOperator]" value="">
+
+    <div class="form-group">
+        <div class="col-xs-12 text-center">
+            <div class="payment-logo">
+                <img src="img\payment\logos\yandex.svg" class="pay-yandexmoney-logo hidden" id="pay-yandexmoney-logo" alt="Оплата через Яндекс.Деньги">
+
+                <img src="img\payment\logos\yandex.svg" class="pay-yandexmoney-logo hidden" id="pay-yandexmoney-logo-PC" alt="Yandex-деньги">
+
+                <img src="img\payment\logos\ic_sber@2x.png" class="pay-yandexmoney-logo hidden" id="pay-yandexmoney-logo-SB" alt="Оплата через Сбербанк.Онлайн">
+
+                <img src="img\payment\logos\ic_cards.svg" class="pay-yandexmoney-logo hidden" id="pay-yandexmoney-logo-AC" alt="Банковские карты">
+
+                <img src="img\payment\logos\ic_webmoney.svg" class="pay-yandexmoney-logo hidden" id="pay-yandexmoney-logo-WM" alt="Оплата через WebMoney">
+
+                <img src="img\payment\logos\ic_alfa.svg" class="pay-yandexmoney-logo hidden" id="pay-yandexmoney-logo-AB" alt="Оплата через Альфа-Клик">
+
+                <img src="img\payment\logos\mts-beeline-tele2.svg" class="pay-yandexmoney-logo hidden" id="pay-yandexmoney-logo-MC" alt="Оплата со счета Tele2 и Билайн">
+            </div>
+        </div>
+    </div>
+
+        
+
+    <div class="form-group field-paymentform-domain required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-domain">Домен или логин</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-domain" class="form-control" name="PaymentForm[domain]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">    <button class="btn btn-help btn-blue" type="button" data-text="Также вы можете ввести номер лицевого счета"></button>
+</div>
+</div>
+    
+
+    <div class="form-group field-paymentform-amount required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-amount">Сумма к оплате</label><div class="col-xs-12 col-md-7"><input type="text" id="paymentform-amount" class="form-control" name="PaymentForm[amount]" placeholder="руб" aria-required="true"></div><div class="col-xs-12 col-md-offset-4 col-md-8"><div class="help-block"></div></div>
+</div>
+
+            
+<div class="form-group kkt-email-row">
+    <div class="col-xs-12 col-md-offset-4 col-md-7">
+        <label for="kkt_email_checkbox" style="display: flex;">
+            <span class="min-w-20">
+                <input type="checkbox" is="kkt_email_checkbox" class="i-fields" checked="" disabled="">
+            </span>
+            <small style="display: inline-block; line-height: 16px; margin-left: 5px; padding-top: 5px;">Отправить электронный чек на <a href="#" onclick="Payment.showKktEmailForm(event)" data-selector="kkt-email-row" title="Изменить e-mail для получения электронного чека">основной e-mail аккаунта хостинга</a></small>
+        </label>
+    </div>
+</div>
+
+<div class="kkt-email-row hidden">
+    <div class="form-group field-paymentform-kkt_email">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-kkt_email">E-mail</label><div class="col-xs-12 col-md-7"><input type="text" id="paymentform-kkt_email" class="form-control" name="PaymentForm[kkt_email]" placeholder="для электронного чека"></div>
+                 <div class="col-xs-12 col-md-offset-4 col-md-7"><div class="help-block"></div></div>
+</div>
+</div>    
+    <div class="row m-t-40">
+    <div class="col-xs-12 text-center">
+        <button class="btn btn-extra-wide btn-violet btn-hover-light-blue">Перейти к оплате</button>
+    </div>
+</div>
+</form>
+
+<div class="hidden">
+    <form id="form-yandexmoney" action="https://money.yandex.ru/eshop.xml" method="post">
+        <input type="hidden" name="orderNumber" id="inv_id" value="">
+        <input type="hidden" name="scid" id="scid">
+        <input type="hidden" name="ShopID" id="ShopID">
+        <input type="hidden" name="Sum" id="Sum">
+        <input type="hidden" name="customerNumber" id="customerNumber">
+        <input type="hidden" name="paymentType" id="paymentType">
+        <input type="hidden" name="rebillingOn" value="false">
+    </form>
+</div></div>
+                            <div class="pay-data-form hidden">
+
+<form id="prepare-webmoney" class="form-horizontal form-process" action="/ajax/payment-process.html" method="post" target="_blank">
+    <input type="hidden" id="paymentform-operator" name="PaymentForm[operator]" value="webmoney">
+
+    <div class="form-group">
+        <div class="col-xs-12 text-center">
+            <div class="payment-logo">
+                                <img src="img\payment\logos\ic_webmoney.svg" alt="Оплата через WebMoney" width="181">
+            </div>
+        </div>
+    </div>
+
+        
+
+    <div class="form-group field-paymentform-domain required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-domain">Домен или логин</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-domain" class="form-control" name="PaymentForm[domain]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">    <button class="btn btn-help btn-blue" type="button" data-text="Также вы можете ввести номер лицевого счета"></button>
+</div>
+</div>
+
+            <input type="hidden" id="paymentform-currency" name="PaymentForm[currency]" value="WMR">
+        <div class="form-group">
+            <label class="col-xs-12 col-md-4 control-label">Сумма к оплате</label>
+            <div class="col-xs-12 col-md-7">
+                <div class="input-group">
+                    <input type="text" id="paymentform-amount" class="form-control" name="PaymentForm[amount]">
+                    <span class="input-group-addon">WMR</span>
+                </div>
+            </div>
+        </div>
+    
+    
+    <div class="row m-t-40">
+    <div class="col-xs-12 text-center">
+        <button class="btn btn-extra-wide btn-violet btn-hover-light-blue">Перейти к оплате</button>
+    </div>
+</div>
+</form>
+
+<div class="m-t-60">
+    <h3 class="font-size-title text-center">Уведомление о рисках</h3>
+    <div class="pay-type-about">
+        <p class="pay-info">
+            Предлагаемые товары и услуги предоставляются не по заказу лица либо предприятия, эксплуатирующего систему WebMoney Transfer.
+            Мы являемся независимым предприятием, оказывающим услуги, и самостоятельно принимаем решения о ценах и предложениях.
+            Предприятия, эксплуатирующие систему WebMoney Transfer, не получают комиссионных вознаграждений или иных вознаграждений
+            за участие в предоставлении услуг и не несут никакой ответственности за нашу деятельность.
+        </p>
+        <p class="pay-info">
+            Аттестация, произведенная со стороны WebMoney Transfer, лишь подтверждает наши реквизиты для связи и удостоверяет личность.
+            Она осуществляется по нашему желанию и не означает, что мы каким-либо образом связаны с продажами операторов системы WebMoney.
+        </p>
+    </div>
+</div>
+
+<div class="hidden">
+    <form id="form-webmoney" method="post" action="https://merchant.webmoney.ru/lmi/payment.asp">
+        <input type="hidden" name="inv_id" id="inv_id" value="">
+        <input type="hidden" name="LMI_PAYMENT_AMOUNT" id="LMI_PAYMENT_AMOUNT">
+        <input type="hidden" name="LMI_PAYMENT_DESC_BASE64" id="LMI_PAYMENT_DESC_BASE64">
+        <input type="hidden" name="LMI_PAYEE_PURSE" id="LMI_PAYEE_PURSE">
+    </form>
+</div></div>
+                        <div class="pay-data-form hidden">
+<form id="prepare-sberbank_card" class="form-horizontal form-process" action="/ajax/payment-process.html" method="post" target="_blank">
+    <input type="hidden" id="paymentform-operator" name="PaymentForm[operator]" value="sberbank_card">
+
+    <div class="form-group">
+        <div class="col-xs-12 text-center">
+            <div class="payment-logo payment-logo--sberbank_card">
+                <img src="img\payment\logos\ic_cards.svg" alt="Банковские карты">
+            </div>
+
+            <div class="payment-logo payment-logo--sberbank_card_advanced">
+                <img src="img\payment\logos\ic_sber@2x.png" alt="Банковские карты">
+            </div>
+        </div>
+    </div>
+
+        
+
+    <div class="form-group field-paymentform-domain required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-domain">Домен или логин</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-domain" class="form-control" name="PaymentForm[domain]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">    <button class="btn btn-help btn-blue" type="button" data-text="Также вы можете ввести номер лицевого счета"></button>
+</div>
+</div>
+    
+
+    <div class="form-group field-paymentform-amount required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-amount">Сумма к оплате</label><div class="col-xs-12 col-md-7"><input type="text" id="paymentform-amount" class="form-control" name="PaymentForm[amount]" placeholder="руб" aria-required="true"></div><div class="col-xs-12 col-md-offset-4 col-md-8"><div class="help-block"></div></div>
+</div>
+
+            
+<div class="form-group kkt-email-row">
+    <div class="col-xs-12 col-md-offset-4 col-md-7">
+        <label for="kkt_email_checkbox" style="display: flex;">
+            <span class="min-w-20">
+                <input type="checkbox" is="kkt_email_checkbox" class="i-fields" checked="" disabled="">
+            </span>
+            <small style="display: inline-block; line-height: 16px; margin-left: 5px; padding-top: 5px;">Отправить электронный чек на <a href="#" onclick="Payment.showKktEmailForm(event)" data-selector="kkt-email-row" title="Изменить e-mail для получения электронного чека">основной e-mail аккаунта хостинга</a></small>
+        </label>
+    </div>
+</div>
+
+<div class="kkt-email-row hidden">
+    <div class="form-group field-paymentform-kkt_email">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-kkt_email">E-mail</label><div class="col-xs-12 col-md-7"><input type="text" id="paymentform-kkt_email" class="form-control" name="PaymentForm[kkt_email]" placeholder="для электронного чека"></div>
+                 <div class="col-xs-12 col-md-offset-4 col-md-7"><div class="help-block"></div></div>
+</div>
+</div>    
+    <div class="row m-t-40">
+    <div class="col-xs-12 text-center">
+        <button class="btn btn-extra-wide btn-violet btn-hover-light-blue">Перейти к оплате</button>
+    </div>
+</div>
+</form>
+
+<div class="hidden">
+    <form id="form-sberbank_card" action="" method="get">
+            </form>
+</div></div>
+            <div class="pay-data-form hidden">
+
+<form id="prepare-bnku" class="form-horizontal form-process" action="/ajax/payment-process.html" method="post" target="_blank">
+    <input type="hidden" id="paymentform-operator" name="PaymentForm[operator]" value="bnku">
+    <input type="hidden" id="paymentform-inv_id" name="PaymentForm[inv_id]">
+
+    <div class="form-group">
+        <div class="col-xs-12 text-center">
+            <h3>Выписать счет на оплату</h3>
+            <div class="bnk-switcher m-t-40">
+                <button type="button" class="btn btn-link  active" onclick="Payment.bnkSwitch(this, Payment.TYPE_BNKU)">Юридическим лицам</button>
+                <button type="button" class="btn btn-link" onclick="Payment.bnkSwitch(this, Payment.TYPE_BNKI)">Индивидуальным предпринимателям</button>
+            </div>
+            <div class="pay-type-about m-t-60">
+                <p class="pay-info">Средства на лицевой счет аккаунта клиента будут зачислены по факту прихода оплаты на расчетный счет нашей компании.</p>
+                
+                <p class="pay-info">Акты о выполненных работах выпускаются ежемесячно на сумму, реально потраченную на услуги,
+                    и высылаются раз в квартал по почте.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-t-60">
+                
+
+    <div class="form-group field-paymentform-domain required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-domain">Домен или логин</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-domain" class="form-control" name="PaymentForm[domain]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">    <button class="btn btn-help btn-blue" type="button" data-text="Также вы можете ввести номер лицевого счета"></button>
+</div>
+</div>
+    </div>
+
+            <div class="form-group field-paymentform-bnku_org_name required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-bnku_org_name">Организация</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-bnku_org_name" class="form-control" name="PaymentForm[bnku_org_name]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">        <button class="btn btn-help" type="button" data-text="Полное наименование организации в соотвествии с учредительными документами.
+                Поле заполняется на русском языке.<br/>Например: <i>ООО «Уши и хвосты»</i>"></button>
+    </div>
+</div>
+
+
+        <div class="form-group field-paymentform-bnku_inn required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-bnku_inn">ИНН</label><div class="col-xs-12 col-md-4"><input type="text" id="paymentform-bnku_inn" class="form-control" name="PaymentForm[bnku_inn]" maxlength="12" aria-required="true"><div class="help-block"></div></div>
+</div>
+    <div class="form-group field-paymentform-bnku_kpp required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-bnku_kpp">КПП</label><div class="col-xs-12 col-md-4"><input type="text" id="paymentform-bnku_kpp" class="form-control" name="PaymentForm[bnku_kpp]" maxlength="9" aria-required="true"><div class="help-block"></div></div>
+</div>
+
+
+            <div class="form-group field-paymentform-bnku_org_address required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-bnku_org_address">Юридический адрес</label><div class="col-xs-10 col-md-7"><textarea id="paymentform-bnku_org_address" class="form-control" name="PaymentForm[bnku_org_address]" aria-required="true"></textarea><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">        <button class="btn btn-help" type="button" data-text="Юридический адрес в соответствии с учредительными документами.
+                Не забудьте указать почтовый индекс.<br/>Например: <i>122142, Москва, пр. Мира, д. 1</i>"></button>
+    </div>
+</div>
+
+
+            <div class="form-group field-paymentform-bnku_org_phone required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-bnku_org_phone">Телефон</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-bnku_org_phone" class="form-control" name="PaymentForm[bnku_org_phone]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">        <button class="btn btn-help" type="button" data-text="Телефон организации в международном формате. Возможно указание нескольких номеров через
+                запятую (номер, указанный первым, считается основным).<br/>Например: <i>+7 495 1234122, +7 495 1234123</i>"></button>
+    </div>
+</div>
+
+    
+
+    <div class="form-group field-paymentform-amount required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-amount">Сумма к оплате</label><div class="col-xs-12 col-md-7"><input type="text" id="paymentform-amount" class="form-control" name="PaymentForm[amount]" placeholder="руб" aria-required="true"></div><div class="col-xs-12 col-md-offset-4 col-md-8"><div class="help-block"></div></div>
+</div>
+
+    
+        <div class="row m-t-40">
+    <div class="col-xs-12 text-center">
+        <button class="btn btn-extra-wide btn-violet btn-hover-light-blue">Распечатать счет</button>
+    </div>
+</div>
+</form></div>
+            <div class="pay-data-form hidden">
+
+<form id="prepare-bnki" class="form-horizontal form-process" action="/ajax/payment-process.html" method="post" target="_blank">
+    <input type="hidden" id="paymentform-operator" name="PaymentForm[operator]" value="bnki">
+    <input type="hidden" id="paymentform-inv_id" name="PaymentForm[inv_id]">
+
+    <div class="form-group">
+        <div class="col-xs-12 text-center">
+            <h3>Выписать счет на оплату</h3>
+            <div class="bnk-switcher m-t-40">
+                <button type="button" class="btn btn-link" onclick="Payment.bnkSwitch(this, Payment.TYPE_BNKU)">Юридическим лицам</button>
+                <button type="button" class="btn btn-link active" onclick="Payment.bnkSwitch(this, Payment.TYPE_BNKI)">Индивидуальным предпринимателям</button>
+            </div>
+            <div class="pay-type-about m-t-60">
+                <p class="pay-info">Средства на лицевой счет аккаунта клиента будут зачислены по факту прихода оплаты на расчетный счет нашей компании.</p>
+            
+                <p class="pay-info">Акты о выполненных работах выпускаются ежемесячно на сумму, реально потраченную на услуги,
+                    и высылаются раз в квартал по почте.</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="m-t-60">
+                
+
+    <div class="form-group field-paymentform-domain required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-domain">Домен или логин</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-domain" class="form-control" name="PaymentForm[domain]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">    <button class="btn btn-help btn-blue" type="button" data-text="Также вы можете ввести номер лицевого счета"></button>
+</div>
+</div>
+    </div>
+
+            <div class="form-group field-paymentform-bnku_org_name required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-bnku_org_name">ФИО</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-bnku_org_name" class="form-control" name="PaymentForm[bnku_org_name]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">        <button class="btn btn-help" type="button" data-text="Фамилия, имя, отчество в соответствии с паспортными данными.
+                    <br/>Например: <i>Аникеева Ирина Сергеевна</i>"></button>
+    </div>
+</div>
+
+        <div class="form-group field-paymentform-bnku_inn required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-bnku_inn">ИНН</label><div class="col-xs-12 col-md-4"><input type="text" id="paymentform-bnku_inn" class="form-control" name="PaymentForm[bnku_inn]" maxlength="12" aria-required="true"><div class="help-block"></div></div>
+</div>
+
+            <div class="form-group field-paymentform-bnku_org_address required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-bnku_org_address">Адрес</label><div class="col-xs-10 col-md-7"><textarea id="paymentform-bnku_org_address" class="form-control" name="PaymentForm[bnku_org_address]" aria-required="true"></textarea><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">        <button class="btn btn-help btn-blue" type="button" data-text="Адрес места жительства или постоянной регистрации.
+                    <br/>Например: <i>122142, Москва, пр. Мира, д. 1</i>"></button>
+    </div>
+</div>
+
+                <div class="form-group field-paymentform-bnku_org_phone required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-bnku_org_phone">Телефон</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-bnku_org_phone" class="form-control" name="PaymentForm[bnku_org_phone]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">        <button class="btn btn-help btn-blue" type="button" data-text="Телефон организации в международном формате. Возможно указание нескольких номеров через запятую (номер, указанный первым, считается основным).
+                        <br/>Например: <i>+7 343 1234122, +7 343 1234123</i>"></button>
+    </div>
+</div>
+
+    
+
+    <div class="form-group field-paymentform-amount required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-amount">Сумма к оплате</label><div class="col-xs-12 col-md-7"><input type="text" id="paymentform-amount" class="form-control" name="PaymentForm[amount]" placeholder="руб" aria-required="true"></div><div class="col-xs-12 col-md-offset-4 col-md-8"><div class="help-block"></div></div>
+</div>
+
+    
+        <div class="row m-t-40">
+    <div class="col-xs-12 text-center">
+        <button class="btn btn-extra-wide btn-violet btn-hover-light-blue">Распечатать счет</button>
+    </div>
+</div>
+</form></div>
+            <div class="pay-data-form hidden">
+
+<form id="prepare-bnkf" class="form-horizontal form-process" action="/ajax/payment-process.html" method="post" target="_blank">
+    <input type="hidden" id="paymentform-operator" name="PaymentForm[operator]" value="bnkf">
+    <input type="hidden" id="paymentform-inv_id" name="PaymentForm[inv_id]">
+
+    <div class="form-group m-b-50">
+        <div class="col-xs-12 text-center">
+            <h3>Выписать квитанцию для оплаты через банк</h3>
+            <div class="pay-type-about">
+                <p class="pay-info">
+                    В форме укажите ваш домен, ваши фамилию, имя, отчество, адрес и сумму к оплате.
+                    На основе этих данных вам будет сгенерирована квитанция для оплаты.
+                </p>
+
+                <div class="pay-info">
+                    <p class="font-size-title">Обратите внимание!</p>
+
+                    <ul class="package__list">
+                        <li>При оплате наших услуг через систему «Телебанк» комиссия составит 0.2% от суммы платежа.</li>
+                        <li>
+                            При оплате в отделениях банка ВТБ24 комиссия составит от 1% (с открытием счета)
+                            до 2.5% (без открытия счета) от суммы платежа.
+                        </li>
+                        <li>
+                            При оплате наших услуг через отделения прочих банков (Сбербанк РФ, Альфа-банк, Райффайзен, и др.)
+                            комиссия составит 3% от суммы платежа.
+                        </li>
+                        <li>
+                            Удобнее выписать квитанцию из Панели управления вашего аккаунта (раздел «Оплата»):
+                            вам не придется заполнять личные данные, нужно будет просто указать сумму платежа.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+        
+
+    <div class="form-group field-paymentform-domain required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-domain">Домен или логин</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-domain" class="form-control" name="PaymentForm[domain]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">    <button class="btn btn-help btn-blue" type="button" data-text="Также вы можете ввести номер лицевого счета"></button>
+</div>
+</div>
+
+            <div class="form-group field-paymentform-bnkf_name required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-bnkf_name">ФИО</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-bnkf_name" class="form-control" name="PaymentForm[bnkf_name]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">        <button class="btn btn-help" type="button" data-text="Фамилия, имя, отчество в соответствии с паспортными данными.
+                <br/>Например: <i>Аникеева Ирина Сергеевна</i>"></button>
+    </div>
+</div>
+
+            <div class="form-group field-paymentform-bnkf_address required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-bnkf_address">Адрес</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-bnkf_address" class="form-control" name="PaymentForm[bnkf_address]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">        <button class="btn btn-help" type="button" data-text="Адрес места жительства или постоянной регистрации.
+                    <br/>Например: <i>Москва, Кулечный пер., д.5, кв.14</i></i>"></button>
+    </div>
+</div>
+
+    
+
+    <div class="form-group field-paymentform-amount required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-amount">Сумма к оплате</label><div class="col-xs-12 col-md-7"><input type="text" id="paymentform-amount" class="form-control" name="PaymentForm[amount]" placeholder="руб" aria-required="true"></div><div class="col-xs-12 col-md-offset-4 col-md-8"><div class="help-block"></div></div>
+</div>
+
+            
+<div class="form-group kkt-email-row">
+    <div class="col-xs-12 col-md-offset-4 col-md-7">
+        <label for="kkt_email_checkbox" style="display: flex;">
+            <span class="min-w-20">
+                <input type="checkbox" is="kkt_email_checkbox" class="i-fields" checked="" disabled="">
+            </span>
+            <small style="display: inline-block; line-height: 16px; margin-left: 5px; padding-top: 5px;">Отправить электронный чек на <a href="#" onclick="Payment.showKktEmailForm(event)" data-selector="kkt-email-row" title="Изменить e-mail для получения электронного чека">основной e-mail аккаунта хостинга</a></small>
+        </label>
+    </div>
+</div>
+
+<div class="kkt-email-row hidden">
+    <div class="form-group field-paymentform-kkt_email">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-kkt_email">E-mail</label><div class="col-xs-12 col-md-7"><input type="text" id="paymentform-kkt_email" class="form-control" name="PaymentForm[kkt_email]" placeholder="для электронного чека"></div>
+                 <div class="col-xs-12 col-md-offset-4 col-md-7"><div class="help-block"></div></div>
+</div>
+</div>    
+        <div class="row m-t-40">
+    <div class="col-xs-12 text-center">
+        <button class="btn btn-extra-wide btn-violet btn-hover-light-blue">Распечатать квитанцию</button>
+    </div>
+</div>
+</form></div>
+            <div class="pay-data-form hidden">
+<form id="prepare-dengionline" class="form-horizontal form-process" action="/ajax/payment-process.html" method="post" target="_blank">
+    <input type="hidden" id="paymentform-operator" name="PaymentForm[operator]" value="dengionline">
+
+    <div class="form-group">
+        <div class="col-xs-12 text-center">
+            <div class="payment-logo">
+                                <img src="img\payment\logos\ic_dengionline@2x.png" alt="Оплата через платежную систему Деньги Online" height="35">
+            </div>
+        </div>
+    </div>
+
+        
+
+    <div class="form-group field-paymentform-domain required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-domain">Домен или логин</label><div class="col-xs-10 col-md-7"><input type="text" id="paymentform-domain" class="form-control" name="PaymentForm[domain]" aria-required="true"><div class="help-block"></div></div><div class="col-xs-2 col-md-1 field-help">    <button class="btn btn-help btn-blue" type="button" data-text="Также вы можете ввести номер лицевого счета"></button>
+</div>
+</div>
+    
+
+    <div class="form-group field-paymentform-amount required">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-amount">Сумма к оплате</label><div class="col-xs-12 col-md-7"><input type="text" id="paymentform-amount" class="form-control" name="PaymentForm[amount]" placeholder="руб" aria-required="true"></div><div class="col-xs-12 col-md-offset-4 col-md-8"><div class="help-block"></div></div>
+</div>
+
+            
+<div class="form-group kkt-email-row">
+    <div class="col-xs-12 col-md-offset-4 col-md-7">
+        <label for="kkt_email_checkbox" style="display: flex;">
+            <span class="min-w-20">
+                <input type="checkbox" is="kkt_email_checkbox" class="i-fields" checked="" disabled="">
+            </span>
+            <small style="display: inline-block; line-height: 16px; margin-left: 5px; padding-top: 5px;">Отправить электронный чек на <a href="#" onclick="Payment.showKktEmailForm(event)" data-selector="kkt-email-row" title="Изменить e-mail для получения электронного чека">основной e-mail аккаунта хостинга</a></small>
+        </label>
+    </div>
+</div>
+
+<div class="kkt-email-row hidden">
+    <div class="form-group field-paymentform-kkt_email">
+<label class="col-xs-12 col-md-4 control-label" for="paymentform-kkt_email">E-mail</label><div class="col-xs-12 col-md-7"><input type="text" id="paymentform-kkt_email" class="form-control" name="PaymentForm[kkt_email]" placeholder="для электронного чека"></div>
+                 <div class="col-xs-12 col-md-offset-4 col-md-7"><div class="help-block"></div></div>
+</div>
+</div>    
+    <div class="row m-t-40">
+    <div class="col-xs-12 text-center">
+        <button class="btn btn-extra-wide btn-violet btn-hover-light-blue">Перейти к оплате</button>
+    </div>
+</div>
+</form>
+
+<div class="hidden">
+    <form id="form-dengionline" action="https://paymentgateway.ru" method="post">
+        <input type="hidden" name="order_id" id="order_id" value="">
+        <input type="hidden" name="project" id="project">
+        <input type="hidden" name="nickname" id="nickname">
+        <input type="hidden" name="nick_extra" id="nick_extra">
+        <input type="hidden" name="paymentCurrency" value="RUB">
+        <input type="hidden" name="amount" id="amount">
+    </form>
+</div></div>
+        </div>
+    </div>
+    <div class="hidden">
+                <div class="hidden">
+    <form id="form-qiwi" action="https://visa.qiwi.com/payment/form.action" method="get" target="_blank">
+        <input type="hidden" name="provider" value="">
+    </form>
+</div>    </div>
+</div>
+
+<div class="top-space-lg">
+    <h2 class="text-center">Другие способы оплаты</h2>
+
+    <div class="payment-list payment-list--low payment-list-other m-t-50">
+
+        <a href="#yandexmoney/MC" class="payment-item payment-item--low payment-ym-mc" onclick="Payment.showForm(this, Payment.TYPE_YM, Payment.YM_MC)">
+            <span class="payment-name payment-name--low">Оплата со счета МТС, Билайн, Теле2</span>
+        </a>
+
+        <a href="#bnkf" class="payment-item payment-item--low payment-bnkf" onclick="Payment.showForm(this, Payment.TYPE_BNKF)">
+            <span class="payment-name payment-name--low">Квитанция для оплаты через банк</span>
+        </a>
+
+        <a href="pay\terms.html" class="payment-item payment-item--low payment-terms">
+            <span class="payment-name payment-name--low">Терминалы</span>
+        </a>
+
+
+
+
+                    <a href="#webmoney" class="payment-item payment-item--low payment-webmoney" onclick="Payment.showForm(this, Payment.TYPE_WM)">
+                <span class="payment-name payment-name--low">WebMoney</span>
+            </a>
+        
+        <div class="payment-list--other">
+            <a href="#yandexmoney/AB" class="payment-item payment-item--low  payment-ym-ab" onclick="Payment.showForm(this, Payment.TYPE_YM, Payment.YM_AB)">
+                <span class="payment-logo"></span>
+                <span class="payment-name">Альфа-Клик</span>
+            </a>
+
+            <a href="#sberbank_card" class="payment-item payment-item--low payment-sberbank_card_advanced" onclick="Payment.showForm(this, Payment.TYPE_SB_CARD_ADVANCED)">
+                <span class="payment-logo"></span>
+                <span class="payment-name">Сбербанк Онлайн</span>
+            </a>
+
+            <a href="#dengionline" class="payment-item payment-item--low payment-dengionline" onclick="Payment.showForm(this, Payment.TYPE_DO)">
+                <span class="payment-logo"></span>
+                <span class="payment-name">ДеньгиOnline</span>
+            </a>
+        </div>
+
+    </div>
+</div>
+                <div class="page-text top-space-md">
+    <p class="text-center">
+        Оплатить услуги можно и в
+        <a href="" target="_blank">Панели управления</a>
+        аккаунтом хостинга
+    </p>
+</div>
+                    </div>
+    </div>
+
+        </div>
+            
+    </div>
+</main>
+        
+<footer>
+    <div class="footer">
+        <div class="container">
+            <div class="footer__container">
+                <div class="footer__top">
+                    <div class="footer__logo">
+                        <a href="index.htm"><img src="img\logo.png"></a>
+                                            </div>
+
+                    <div class="footer__menu">
+                        <div class="footer__menu-item visible-sm visible-md visible-lg">
+                            <a href="shop.html" class="footer__title">Магазин</a>
+                            <br>
+                            <br>  
+                            <a href="shop\services.html" class="footer__title">Доп. Услуги</a>
+                            <span class="footer__about">Дополнительные услуги, которые могут пригодиться клиентам нашего
+                                хостинга: CMS, Панели управления, SSL-сертификаты</span>
+                        </div>
+                    </div>
+
+                    <div class="footer__separator"></div>
+
+                   
+
+                    <div class="footer__search">
+                        <div class="footer__search-form">
+                            <form action="/search.html" method="get">
+                                <input type="hidden" name="searchid" value="1945773">
+                                <div class="search-block">
+                                    <input type="text" placeholder="Поиск по сайту" name="text" value="">
+                                    <button class="search-btn"></button>
+                                </div>
+                            </form>
+                        </div>
+
+                        <div class="social__container">
+                            <div class="footer__search-support">
+                                <a class="support-tel" href="tel:88005557823" target="_blank">
+                                    8-800-555-78-23<small>Поддержка 24/7</small>
+                                </a>
+                            </div>
+
+                            <div class="footer__socials">
+                                <a class="social-vk" href="https://vk.com/vkdanil" target="_blank"></a>
+                                <a class="social-fb" href="https://fb.com/vkdanil" target="_blank"></a>
+                                <a class="social-tw" href="https://twitter.com/vkdanil" target="_blank"></a>
+                                <a class="social-ut" href="https://youtube.com/user/vkdanil" target="_blank"></a>
+                            </div>
+                        </div>
+                   
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer__bottom">
+            <div class="container">
+                <div class="footer__menu-item _company">
+                     2020 «New Co»<br>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>    </div>
+        <script src="assets\80e87b76\jquery.js"></script>
+<script src="lib\html5shiv\dist\html5shiv.min.js"></script>
+<script src="lib\bootstrap\dist\js\bootstrap.min.js"></script>
+<script src="main.min.js?1579708958"></script></body>
+</html>

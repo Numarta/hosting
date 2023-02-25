@@ -1,0 +1,171 @@
+-- MySQL dump 10.13  Distrib 5.7.35-38, for Linux (x86_64)
+--
+-- Host: localhost    Database: numart_magazinehhos
+-- ------------------------------------------------------
+-- Server version	5.7.35-38
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+/*!40103 SET @OLD_TIME_ZONE=@@TIME_ZONE */;
+/*!40103 SET TIME_ZONE='+00:00' */;
+/*!40014 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0 */;
+/*!40014 SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0 */;
+/*!40101 SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='NO_AUTO_VALUE_ON_ZERO' */;
+/*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
+/*!50717 SELECT COUNT(*) INTO @rocksdb_has_p_s_session_variables FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = 'performance_schema' AND TABLE_NAME = 'session_variables' */;
+/*!50717 SET @rocksdb_get_is_supported = IF (@rocksdb_has_p_s_session_variables, 'SELECT COUNT(*) INTO @rocksdb_is_supported FROM performance_schema.session_variables WHERE VARIABLE_NAME=\'rocksdb_bulk_load\'', 'SELECT 0') */;
+/*!50717 PREPARE s FROM @rocksdb_get_is_supported */;
+/*!50717 EXECUTE s */;
+/*!50717 DEALLOCATE PREPARE s */;
+/*!50717 SET @rocksdb_enable_bulk_load = IF (@rocksdb_is_supported, 'SET SESSION rocksdb_bulk_load = 1', 'SET @rocksdb_dummy_bulk_load = 0') */;
+/*!50717 PREPARE s FROM @rocksdb_enable_bulk_load */;
+/*!50717 EXECUTE s */;
+/*!50717 DEALLOCATE PREPARE s */;
+
+--
+-- Table structure for table `dedicated`
+--
+
+DROP TABLE IF EXISTS `dedicated`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `dedicated` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `package` varchar(50) NOT NULL,
+  `price` varchar(50) NOT NULL,
+  `ssd` varchar(50) NOT NULL,
+  `hdd` varchar(50) NOT NULL,
+  `fio` varchar(50) NOT NULL,
+  `email` varchar(50) NOT NULL,
+  `phone` varchar(50) NOT NULL,
+  `comment` varchar(50) NOT NULL,
+  `personalDataProcessAccess` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `dedicated`
+--
+
+LOCK TABLES `dedicated` WRITE;
+/*!40000 ALTER TABLE `dedicated` DISABLE KEYS */;
+INSERT INTO `dedicated` VALUES (1,'e3-1240v3_dedic','8890','2x256Gb','1TbSATA','','','','','0'),(2,'e3-1240v6_dedic','12490','2x256Gb','1TbSATA','','','','','0'),(3,'e3-1240v3_dedic','8890','2x256Gb','1TbSATA','Привет','','','','0'),(4,'e3-1240v3_dedic','8890','2x256Gb','1TbSATA','Привет','','','','1'),(5,'e3-1240v3_dedic','8890','2x256Gb','1TbSATA','','','+79211353522','','0'),(6,'e3-1240v3_dedic','8890','2x256Gb','1TbSATA','','','+79211353522','','0'),(7,'e3-1240v3_dedic','8890','2x256Gb','1TbSATA','','','','','0'),(8,'e3-1240v3_dedic','8890','2x256Gb','1TbSATA','','','','','0'),(9,'e3-1240v3_dedic','11190','2x512Gb','2TbSATA','Никита','123@mail.ru','89999999999','123','1'),(10,'e3-1240v3_dedic','11190','2x512Gb','2TbSATA','Даниил ','Evitatvcompany@yandex.ru','89995101192','123','1'),(11,'e3-1240v3_dedic','11190','2x512Gb','2TbSATA','123','123@mail.ru12','123','123','1'),(12,'e3-1240v3_dedic','8890','2x256Gb','1TbSATA','','','','','0'),(13,'e3-1240v6_dedic','12490','2x256Gb','1TbSATA','Даниил','Evitatvcompany@yandex.ru','89122464285','123123123','1'),(14,'e3-1240v6_dedic','12490','2x256Gb','1TbSATA','Даниил ','123@mail.ru','89995101192','Здравствуйте, можно быстрее','1'),(15,'e3-1240v6_dedic','12490','2x256Gb','1TbSATA','Даниил ','Evitatvcompany@yandex.ru','89995101192','123','1'),(16,'e3-1240v6_dedic','12490','2x256Gb','1TbSATA','Mihail Ivanov','johnn.hotmail@mail.ru','+79200808700','','1'),(17,'e3-1240v6_dedic','12490','2x256Gb','1TbSATA','кнкнк','нкн','кнк','нкнк','1'),(18,'e3-1240v6_dedic','12490','2x256Gb','1TbSATA','аыа','ываыва','ываыв','аываыв','0');
+/*!40000 ALTER TABLE `dedicated` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
+-- Table structure for table `orders`
+--
+
+DROP TABLE IF EXISTS `orders`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `orders` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `price` varchar(50) NOT NULL,
+  `serviceId` varchar(50) NOT NULL,
+  `package` varchar(50) NOT NULL,
+  `event` varchar(50) NOT NULL,
+  `domainRegType` varchar(50) NOT NULL,
+  `customerType` varchar(50) NOT NULL,
+  `domainName` varchar(50) NOT NULL,
+  `customerLogin` varchar(50) NOT NULL,
+  `personName` varchar(50) NOT NULL,
+  `personEmail` varchar(50) NOT NULL,
+  `entName` varchar(50) NOT NULL,
+  `entEmail` varchar(50) NOT NULL,
+  `entInn` varchar(50) NOT NULL,
+  `entBirthDay` varchar(50) NOT NULL,
+  `entPhone` varchar(50) NOT NULL,
+  `entPassportNumber` varchar(50) NOT NULL,
+  `entPassportDate` varchar(50) NOT NULL,
+  `entPassportMade` varchar(50) NOT NULL,
+  `entBankName` varchar(50) NOT NULL,
+  `entBankBik` varchar(50) NOT NULL,
+  `entBankAccountKor` varchar(50) NOT NULL,
+  `entBankAccountRas` varchar(50) NOT NULL,
+  `entContactIndex` varchar(50) NOT NULL,
+  `entContactCity` varchar(50) NOT NULL,
+  `entContactAddress` varchar(50) NOT NULL,
+  `entContactPostIndex` varchar(50) NOT NULL,
+  `entContactPostCity` varchar(50) NOT NULL,
+  `entContactPostAddress` varchar(50) NOT NULL,
+  `entContactPostReceiver` varchar(50) NOT NULL,
+  `entContactName` varchar(50) NOT NULL,
+  `entContactPhone` varchar(50) NOT NULL,
+  `orgName` varchar(50) NOT NULL,
+  `orgEmail` varchar(50) NOT NULL,
+  `orgInn` varchar(50) NOT NULL,
+  `orgKpp` varchar(50) NOT NULL,
+  `orgPhone` varchar(50) NOT NULL,
+  `orgBankName` varchar(50) NOT NULL,
+  `orgBankBik` varchar(50) NOT NULL,
+  `orgIsBudget` varchar(50) NOT NULL,
+  `orgAccountKor` varchar(50) NOT NULL,
+  `orgAccountRas` varchar(50) NOT NULL,
+  `orgBossName` varchar(50) NOT NULL,
+  `orgBossPosition` varchar(50) NOT NULL,
+  `orgBossDocs` varchar(50) NOT NULL,
+  `orgIndex` varchar(50) NOT NULL,
+  `orgCity` varchar(50) NOT NULL,
+  `orgAddress` varchar(50) NOT NULL,
+  `orgPostIndex` varchar(50) NOT NULL,
+  `orgPostCity` varchar(50) NOT NULL,
+  `orgPostAddress` varchar(50) NOT NULL,
+  `orgPostReceiver` varchar(50) NOT NULL,
+  `orgContactName` varchar(50) NOT NULL,
+  `orgContactPhone` varchar(50) NOT NULL,
+  `domainDataPhone` varchar(50) NOT NULL,
+  `domainDataBirthDay` varchar(50) NOT NULL,
+  `domainDataPassportNumber` varchar(50) NOT NULL,
+  `domainDataPassportDate` varchar(50) NOT NULL,
+  `domainDataPassportMade` varchar(50) NOT NULL,
+  `domainDataIndex` varchar(50) NOT NULL,
+  `domainDataCity` varchar(50) NOT NULL,
+  `domainDataAddress` varchar(50) NOT NULL,
+  `siteMoveFrom` varchar(50) NOT NULL,
+  `siteMoveList` varchar(50) NOT NULL,
+  `siteMoveLogin` varchar(50) NOT NULL,
+  `siteMovePassword` varchar(50) NOT NULL,
+  `orgAdminName` varchar(50) NOT NULL,
+  `orgAdminIndex` varchar(50) NOT NULL,
+  `orgAdminCity` varchar(50) NOT NULL,
+  `orgAdminAddress` varchar(50) NOT NULL,
+  `orgAdminPhone` varchar(50) NOT NULL,
+  `orgAdminEmail` varchar(50) NOT NULL,
+  `orgIsPostDocs` varchar(50) NOT NULL,
+  `entIsPostDocs` varchar(50) NOT NULL,
+  `comment` varchar(50) NOT NULL,
+  `promocode` varchar(50) NOT NULL,
+  `personalDataProcessAccess` varchar(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=70 DEFAULT CHARSET=utf8;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `orders`
+--
+
+LOCK TABLES `orders` WRITE;
+/*!40000 ALTER TABLE `orders` DISABLE KEYS */;
+INSERT INTO `orders` VALUES (35,'1560','719','Mars','0','mov','f','123','Princex','Кащеев Д А','Evitatvcompany@yandex.ru','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(38,'3600','720','Venera','0','mov','f','123','123','123','123','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(39,'6000','721','Zemlya','0','mov','f','123','123','123','123','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(40,'6000','721','Zemlya','0','mov','f','123','123','123','123','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(41,'','719','turbobitrix1','0','mov','f','123','123','123','123','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(42,'','720','turbobitrix2','0','mov','f','123','123','123','123','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(43,'','721','turbobitrix3','0','mov','f','123','123','123','123','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(44,'','719','turbobitrix1','0','mov','f','123','123','123','123','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(45,'41040','720','Premium2','0','mov','f','123','123','123','123','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(46,'98280','721','Premium3','0','mov','f','123','123','123','123','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(47,'12960','719','Premium1','0','mov','f','123','123','123','123','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(48,'1560','716','Mars','0','mov','f','123','Princex','123','123','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(49,'','717','turbobitrix2','0','mov','f','Апап','Впап','Впап','Впап','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','Вар','','1'),(50,'','717','turbobitrix2','0','mov','f','Апап','Впап','Впап','Впап','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','Вар','','1'),(51,'41040','717','Premium2','0','mov','f','123','123','123','123','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','123','123','1'),(52,'1560','719','Mars','0','reg','i','Vk.com','Princex','','','Кащеев Даниил Андреевич','Evitatvcompany@yandex.ru','123','23/04/1998','89995101192','6512 389863','23/04/2012','Отделом УФМС России','Банк Екатеринбург','12344567788','9876','7843','620078','Екатеринбург','Коминтерна 13, кв 29','620078','Екатеринбург','Коминтерна 13, кв 29','Кащеев Д.А','Кащеев Даниил Андреевич','89995101192','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','1','123','123','1'),(53,'1560','719','Mars','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0'),(54,'1560','719','Mars','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0'),(55,'1560','716','Mars','0','reg','f','кнке','нкен','кнкен','кнк','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','кн','кн','нкн','кн','кнк','кнкен','кнк','нккн','timeweb','','','','','','','','','','0','0','кнк','','0'),(56,'1560','716','Mars','0','reg','f','кнке','нкен','кнкен','кнк','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','кн','кн','нкн','кн','кнк','кнкен','кнк','нккн','timeweb','','','','','','','','','','0','0','кнк','','1'),(57,'1560','716','Mars','0','reg','f','егеге','егегег','ег','егегег','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','егег','геег','егег','еге','гегег','егеге','гег','егегег','timeweb','','','','','','','','','','0','0','егег','ег','0'),(58,'3600','720','Venera','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0'),(59,'3600','720','Venera','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','1'),(60,'3600','720','Venera','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0'),(61,'3600','720','Venera','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0'),(62,'3600','720','Venera','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0'),(63,'3600','720','Venera','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0'),(64,'3600','720','Venera','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0'),(65,'3600','720','Venera','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0'),(66,'3600','720','Venera','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0'),(67,'3600','720','Venera','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0'),(68,'3600','720','Venera','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0'),(69,'3600','720','Venera','0','reg','f','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','','0','','','','','','','','','','','','','','','','','','','','','','','timeweb','','','','','','','','','','0','0','','','0');
+/*!40000 ALTER TABLE `orders` ENABLE KEYS */;
+UNLOCK TABLES;
+/*!50112 SET @disable_bulk_load = IF (@is_rocksdb_supported, 'SET SESSION rocksdb_bulk_load = @old_rocksdb_bulk_load', 'SET @dummy_rocksdb_bulk_load = 0') */;
+/*!50112 PREPARE s FROM @disable_bulk_load */;
+/*!50112 EXECUTE s */;
+/*!50112 DEALLOCATE PREPARE s */;
+/*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
+
+/*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
+/*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
+/*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+/*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
+
+-- Dump completed on 2023-02-25 11:23:07
